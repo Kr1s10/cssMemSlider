@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
 
 * {
     margin: 0;
@@ -9,6 +9,7 @@
 
 body {
     background-color: #838383;
+    /* padding: 0 2rem; */
 }
 
 input {
@@ -39,12 +40,14 @@ input {
     width: 500%;
     display: flex;
     align-items: center;
+    transition: .5s;
 }
 
 .slide {
     display: block;
     height: 40rem;
     width: 100%;
+    margin: 0 0.1rem;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -81,6 +84,16 @@ input {
     cursor: pointer;
 }
 
+.control-label span {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background-color: #ffb08b;
+    border: 0.13rem solid #505050;
+    transition: 0.3s;
+}
+
 .control-label:last-child {
     padding-right: 0;
 }
@@ -95,24 +108,6 @@ input {
     border-color: #505050;
 }
 
-input:checked + .control-label > span {
-    background-color: transparent;
-}
-
-input:checked + .control-label:hover > span {
-    border-color: #ffffff;
-}
-
-.control-label span {
-    display: block;
-    width: 1.1rem;
-    height: 1.1rem;
-    border-radius: 50%;
-    background-color: #ffb08b;
-    border: 0.13rem solid #505050;
-    transition: 0.3s;
-}
-
 .descriptions-slider {
     width: 70%;
     overflow: hidden;
@@ -121,4 +116,49 @@ input:checked + .control-label:hover > span {
 .description {
     width: 100%;
     font-size: 1.6em;
+}
+
+code {
+    font-weight: 600;
+}
+
+#s1:checked ~ .controls .control-label[for='s1'] > span,
+#s2:checked ~ .controls .control-label[for='s2'] > span,
+#s3:checked ~ .controls .control-label[for='s3'] > span,
+#s4:checked ~ .controls .control-label[for='s4'] > span,
+#s5:checked ~ .controls .control-label[for='s5'] > span {
+    background-color: transparent;
+}
+
+#s1:checked ~ .controls .control-label[for='s1']:hover > span,
+#s2:checked ~ .controls .control-label[for='s2']:hover > span,
+#s3:checked ~ .controls .control-label[for='s3']:hover > span,
+#s4:checked ~ .controls .control-label[for='s4']:hover > span,
+#s5:checked ~ .controls .control-label[for='s5']:hover > span {
+    border-color: #ffffff;
+}
+
+#s1:checked ~ .slider > .slides,
+#s1:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(0);
+}
+
+#s2:checked ~ .slider > .slides,
+#s2:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-20%);
+}
+
+#s3:checked ~ .slider > .slides,
+#s3:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-40%);
+}
+
+#s4:checked ~ .slider > .slides,
+#s4:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-60%);
+}
+
+#s5:checked ~ .slider > .slides,
+#s5:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-80%);
 }
