@@ -9,7 +9,6 @@
 
 body {
     background-color: #838383;
-    padding: 0 5%;
 }
 
 input {
@@ -18,6 +17,7 @@ input {
 
 .main {
     max-width: 70rem;
+    width: 90%;
     background-color: #ffdec8;
     border-radius: 2%;
     margin: 4rem auto;
