@@ -9,7 +9,7 @@
 
 body {
     background-color: #838383;
-    /* padding: 0 2rem; */
+    padding: 0 5%;
 }
 
 input {
@@ -25,11 +25,11 @@ input {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: 2rem 0;
 }
 
 .slider {
     width: 100%;
-    margin-bottom: 2rem;
     overflow: hidden;
     border-right: 0.2rem solid #ffb08b;
     border-left: 0.2rem solid #ffb08b;
@@ -45,7 +45,7 @@ input {
 
 .slide {
     display: block;
-    height: 40rem;
+    height: 65vh;
     width: 100%;
     margin: 0 0.1rem;
     background-position: center;
@@ -161,4 +161,52 @@ code {
 #s5:checked ~ .slider > .slides,
 #s5:checked ~ .descriptions-slider > .descriptions {
     transform: translateX(-80%);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 2em 1.5em;
+        gap: 1.5rem;
+    }
+
+    .slide {
+        height: 50vh;
+    }
+
+    .controls {
+        order: 0;
+        margin: 0 auto;
+    }
+
+    .control-label:last-child {
+        padding-right: 0.5rem;
+    }
+
+    .descriptions-slider {
+        width: 100%;
+    }
+
+    .description {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        gap: 1rem;
+    }
+
+    .slide {
+        height: 35vh;
+    }
+
+    .control-label span {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-width: 0.1rem;
+    }
+
+    .description {
+        font-size: 1.2em;
+    }
 }
