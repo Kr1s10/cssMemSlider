@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #838383;
+}
+
+input {
+    display: none;
+}
+
+.main {
+    max-width: 70rem;
+    width: 90%;
+    background-color: #ffdec8;
+    border-radius: 2%;
+    margin: 4rem auto;
+    padding: 2em 3em 4em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem 0;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    border-right: 0.2rem solid #ffb08b;
+    border-left: 0.2rem solid #ffb08b;
+}
+
+.slides,
+.descriptions {
+    width: 500%;
+    display: flex;
+    align-items: center;
+    transition: .5s;
+}
+
+.slide {
+    display: block;
+    height: 65vh;
+    width: 100%;
+    margin: 0 0.1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.img-1 {
+    background-image: url(./assets/img/meme_1.png);
+}
+
+.img-2 {
+    background-image: url(./assets/img/meme_2.png);
+}
+
+.img-3 {
+    background-image: url(./assets/img/meme_3.png);
+}
+
+.img-4 {
+    background-image: url(./assets/img/meme_4.png);
+}
+
+.img-5 {
+    background-image: url(./assets/img/meme_5.png);
+}
+
+.controls {
+    order: 1;
+    margin-left: auto;
+    display: flex;
+}
+
+.control-label {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.control-label span {
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    background-color: #ffb08b;
+    border: 0.13rem solid #505050;
+    transition: 0.3s;
+}
+
+.control-label:last-child {
+    padding-right: 0;
+}
+
+.control-label:hover > span {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.control-label:active > span {
+    background-color: #505050;
+    border-color: #505050;
+}
+
+.descriptions-slider {
+    width: 70%;
+    overflow: hidden;
+}
+
+.description {
+    width: 100%;
+    font-size: 1.6em;
+}
+
+code {
+    font-weight: 600;
+}
+
+#s1:checked ~ .controls .control-label[for='s1'] > span,
+#s2:checked ~ .controls .control-label[for='s2'] > span,
+#s3:checked ~ .controls .control-label[for='s3'] > span,
+#s4:checked ~ .controls .control-label[for='s4'] > span,
+#s5:checked ~ .controls .control-label[for='s5'] > span {
+    background-color: transparent;
+}
+
+#s1:checked ~ .controls .control-label[for='s1']:hover > span,
+#s2:checked ~ .controls .control-label[for='s2']:hover > span,
+#s3:checked ~ .controls .control-label[for='s3']:hover > span,
+#s4:checked ~ .controls .control-label[for='s4']:hover > span,
+#s5:checked ~ .controls .control-label[for='s5']:hover > span {
+    border-color: #ffffff;
+}
+
+#s1:checked ~ .slider > .slides,
+#s1:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(0);
+}
+
+#s2:checked ~ .slider > .slides,
+#s2:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-20%);
+}
+
+#s3:checked ~ .slider > .slides,
+#s3:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-40%);
+}
+
+#s4:checked ~ .slider > .slides,
+#s4:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-60%);
+}
+
+#s5:checked ~ .slider > .slides,
+#s5:checked ~ .descriptions-slider > .descriptions {
+    transform: translateX(-80%);
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 2em 1.5em;
+        gap: 1.5rem;
+    }
+
+    .slide {
+        height: 50vh;
+    }
+
+    .controls {
+        order: 0;
+        margin: 0 auto;
+    }
+
+    .control-label:last-child {
+        padding-right: 0.5rem;
+    }
+
+    .descriptions-slider {
+        width: 100%;
+    }
+
+    .description {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        gap: 1rem;
+    }
+
+    .slide {
+        height: 35vh;
+    }
+
+    .control-label span {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-width: 0.1rem;
+    }
+
+    .description {
+        font-size: 1.2em;
+    }
+}
